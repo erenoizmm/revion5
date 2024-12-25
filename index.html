@@ -2,265 +2,151 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Bonus Kralı - Rengarenk Bonuslar</title>
+    <meta name="viewport" content="width=1024">
+    <title>KOD BURADA</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        :root {
-            --primary: #ffd700;
-            --secondary: #ff6b6b;
-            --accent: #4CAF50;
-            --purple: #9c27b0;
-            --blue: #2196F3;
-            --pink: #E91E63;
-            --orange: #FF9800;
-            --cyan: #00BCD4;
-            --dark: #121212;
-            --light: #ffffff;
-            --gradient-1: linear-gradient(45deg, #ffd700, #ff6b6b);
-            --gradient-2: linear-gradient(45deg, #9c27b0, #2196F3);
-            --gradient-3: linear-gradient(45deg, #E91E63, #FF9800);
-            --gradient-4: linear-gradient(45deg, #00BCD4, #4CAF50);
-            --glass: rgba(255, 255, 255, 0.1);
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-            color: var(--light);
-            overflow-x: hidden;
+            background: #000;
+            min-width: 1024px;
             min-height: 100vh;
-        }
-
-        .snowflake {
-            position: fixed;
-            color: white;
-            text-shadow: 0 0 10px rgba(255,255,255,0.8);
-            filter: blur(1px);
-            z-index: 1000;
-            pointer-events: none;
-            animation: snowfall linear infinite;
-        }
-
-        @keyframes snowfall {
-            0% {
-                transform: translateY(-10vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0.3;
-            }
+            color: #fff;
+            overflow-x: auto;
         }
 
         .navbar {
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem;
+            position: fixed;
             width: 100%;
+            min-width: 1024px;
+            top: 0;
             z-index: 1000;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-            text-align: center;
+            display: flex;
+            align-items: center;
         }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: logoGlow 2s infinite;
-        }
-
-        @keyframes logoGlow {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7)); }
-            50% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.9)); }
+        .logo-img {
+            height: 50px;
+            margin-left: 20px;
         }
 
         .social-sidebar {
             position: fixed;
-            right: 10px;
+            right: 20px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
+            padding: 20px;
         }
 
         .social-btn {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
             color: white;
             text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s;
         }
 
         .social-btn:hover {
-            transform: scale(1.15);
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
-        }
-
-        .social-btn.whatsapp { background: #25D366; }
-        .social-btn.telegram { background: #0088cc; }
-        .social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .social-btn.facebook { background: #4267B2; }
-        .social-btn.twitter { background: #1DA1F2; }
-        .social-btn.youtube { background: #FF0000; }
-        .social-btn.tiktok { background: #000000; }
-        .social-btn.skype { background: #00AFF0; }
-
-        .quick-menu {
-            position: fixed;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            background: rgba(18,18,18,0.95);
-            padding: 15px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,215,0,0.2);
-        }
-
-        .quick-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 15px;
-            margin: 5px 0;
-            background: var(--gradient-1);
-            color: var(--dark);
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .quick-btn:hover {
-            transform: translateX(5px);
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
-        }
-
-        .hero {
-            text-align: center;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .bonus-amount {
-            font-size: 4rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 30px;
-            text-shadow: 0 0 20px rgba(255,215,0,0.5);
+            transform: scale(1.1);
         }
 
         .site-boxes {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            padding: 20px;
+            padding: 100px 30px 50px;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .site-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
             padding: 20px;
             text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
+            transition: transform 0.2s;
         }
 
         .site-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border-color: var(--primary);
         }
 
         .site-image {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .site-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .site-description {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
+            border-radius: 8px;
             margin-bottom: 15px;
         }
 
+        .site-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+
         .premium-btn {
+            display: inline-block;
             padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 25px;
-            background: var(--gradient-1);
-            color: var(--dark);
+            color: white;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            font-weight: 500;
+            transition: transform 0.2s;
         }
 
         .premium-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+            transform: translateY(-2px);
         }
 
-        @media (max-width: 768px) {
-            body {
-                min-width: 1024px;
-                overflow-x: auto;
+        .snowflake {
+            position: fixed;
+            color: white;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.5;
+            animation: snowfall linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(110vh);
             }
-            .snowflake {
-                display: none;
-            }
-            .site-boxes {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-            .social-sidebar, .quick-menu {
-                position: fixed;
-            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
     </style>
 </head>
@@ -268,21 +154,15 @@
     <div id="snow-container"></div>
 
     <nav class="navbar">
-        <div class="logo">Bonus Kralı</div>
+        <img src="LOGO_URL_BURAYA" alt="Logo" class="logo-img">
     </nav>
 
     <div class="social-sidebar">
-        <a href="YOUR_WHATSAPP_LINK" class="social-btn whatsapp" title="Whatsapp İletişim">
-            <i class="fab fa-whatsapp"></i>
-        </a>
         <a href="YOUR_TELEGRAM_LINK" class="social-btn telegram" title="Telegram Kanalı">
             <i class="fab fa-telegram"></i>
         </a>
         <a href="YOUR_INSTAGRAM_LINK" class="social-btn instagram" title="Instagram Sayfası">
             <i class="fab fa-instagram"></i>
-        </a>
-        <a href="YOUR_FACEBOOK_LINK" class="social-btn facebook" title="Facebook Sayfası">
-            <i class="fab fa-facebook-f"></i>
         </a>
         <a href="YOUR_TWITTER_LINK" class="social-btn twitter" title="Twitter Hesabı">
             <i class="fab fa-twitter"></i>
@@ -298,188 +178,165 @@
         </a>
     </div>
 
-    <div class="quick-menu">
-        <a href="YOUR_LINK_1" class="quick-btn">
-            <i class="fas fa-gift"></i> Günlük Bonuslar
-        </a>
-        <a href="YOUR_LINK_2" class="quick-btn">
-            <i class="fas fa-percentage"></i> Kayıp Bonusları
-        </a>
-        <a href="YOUR_LINK_3" class="quick-btn">
-            <i class="fas fa-users"></i> Arkadaş Bonusu
-        </a>
-        <a href="YOUR_LINK_4" class="quick-btn">
-            <i class="fas fa-wallet"></i> Yatırım Bonusları
-        </a>
-        <a href="YOUR_LINK_5" class="quick-btn">
-            <i class="fas fa-headset"></i> Canlı Destek
-        </a>
-        <a href="YOUR_LINK_6" class="quick-btn">
-            <i class="fas fa-credit-card"></i> Ödeme Yöntemleri
-        </a>
-        <a href="YOUR_LINK_7" class="quick-btn">
-            <i class="fas fa-shield-alt"></i> Güvenli Giriş
-        </a>
-    </div>
-
-    <section class="hero">
-        <div class="hero-content animate__animated animate__fadeIn">
-            <h1 class="hero-title animate__animated animate__pulse animate__infinite">
-                MEGA BONUS FIRSATI
-            </h1>
-            <div class="bonus-amount">₺10.000</div>
+    </h1>
+            <div class="bonus-amount"></div>
         </div>
-    </section>
+    </section>                
 
     <div class="site-boxes">
         <!-- Site Box 1 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_1" alt="Site 1" class="site-image">
-            <h3 class="site-title">Site 1</h3>
-            <p class="site-description">Muhteşem bonus fırsatları ve güvenilir bahis deneyimi.</p>
-            <a href="YOUR_SITE_LINK_1" class="premium-btn">TIKLA</a>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/CMh9YKWEbl.png" alt="site1" class="site-image">
+            <p class="site-description">🌟 Otobet, açılışa özel 800 TL Deneme Bonusu ile seni karşılıyor. Bu fırsatı yakala ve kazanmaya şimdi başla!</p>
+            <a href="https://cutt.ly/XePQcEf1" class="premium-btn">HEMEN KATIL</a>
         </div>
 
         <!-- Site Box 2 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_2" alt="Site 2" class="site-image">
-            <h3 class="site-title">Site 2</h3>
-            <p class="site-description">En yüksek oranlar ve anında ödeme garantisi.</p>
-            <a href="YOUR_SITE_LINK_2" class="premium-btn">TIKLA</a>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/pbjWKnvlmq.png" alt="Site 2" class="site-image">
+            <p class="site-description">100₺ Spor&Casino Nakit Deneme Bonusu! 🎰 Betportal üyeliği oluştur ve anında 100₺ Nakit Bonus kazan! 💰 Yatırım şartı yok!</p>
+            <a href="https://betportalgiris.ws/canberk" class="premium-btn">HEMEN KATIL</a>
         </div>
 
         <!-- Site Box 3 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_3" alt="Site 3" class="site-image">
-            <h3 class="site-title">Site 3</h3>
-            <p class="site-description">Özel VIP bonuslar ve kesintisiz canlı destek.</p>
-            <a href="YOUR_SITE_LINK_3" class="premium-btn">TIKLA</a>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/hCdapojgcbx_.png" alt="Site 3" class="site-image">
+            <p class="site-description">Sadakat Bonusu 4 Yatırıma 5. Yatırım Bayspin'den Hediye. BAYSPİN İLE KAZANMAYA BAŞLA 🎁</p>
+            <a href="https://cutt.ly/5eXZ1voD" class="premium-btn">HEMEN KATIL</a>
         </div>
 
         <!-- Site Box 4 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_4" alt="Site 4" class="site-image">
-            <h3 class="site-title">Site 4</h3>
-            <p class="site-description">%100 Hoşgeldin bonusu ve özel promosyonlar.</p>
-            <a href="YOUR_SITE_LINK_4" class="premium-btn">TIKLA</a>
-        </div>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/GEpwBc.png" alt="Site 4" class="site-image">
+            <p class="site-description">TLCASİNO DENEME BONUSU 200 FREESPIN 🎁 KAZANMAYA BAŞLA 💷</p>
+            <a href="https://tlgiris2.com/affiliates/?btag=2208132" class="premium-btn">HEMEN KATIL</a></antArtifact>
+            </div>
 
-       <!-- Site Box 5 devamı -->
-            <h3 class="site-title">Site 5</h3>
-            <p class="site-description">Yüksek oranlar ve hızlı çekim imkanı.</p>
-            <a href="YOUR_SITE_LINK_5" class="premium-btn">TIKLA</a>
+        <!-- Site Box 5 -->
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/8WwfRLp.png" alt="Site 5" class="site-image">
+            <p class="site-description">400 TL YA DA 400 FREESPIN DENEME BONUSU 🎁 Yatırım, Çevrim Şartı Yok. Dilediğin Alanda Katılım.</p>
+            <a href="https://cutt.ly/LeDFVRIa" class="premium-btn">HEMEN KATIL</a>
         </div>
 
         <!-- Site Box 6 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_6" alt="Site 6" class="site-image">
-            <h3 class="site-title">Site 6</h3>
-            <p class="site-description">7/24 Canlı destek ve güvenli ödeme sistemi.</p>
-            <a href="YOUR_SITE_LINK_6" class="premium-btn">TIKLA</a>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/_l2nP.png" alt="Site 6" class="site-image">
+            <p class="site-description">YENİLENDİ ! BETEWİN'DEN HERKESE HOŞGELDİN HEDİYESİ ! AVANTAJLARIN ADRESİ BETEWİN'E HEMEN ÜYE OL ! 1.500 ₺ Deneme Bonusu İle Heyecana Ortak Ol !</p>
+            <a href="https://cutt.ly/DeYr6dwb" class="premium-btn">HEMEN KATIL</a>
         </div>
 
         <!-- Site Box 7 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_7" alt="Site 7" class="site-image">
-            <h3 class="site-title">Site 7</h3>
-            <p class="site-description">En çok kazandıran slot oyunları burada.</p>
-            <a href="YOUR_SITE_LINK_7" class="premium-btn">TIKLA</a>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/3ctnE2.png" alt="Site 7" class="site-image">
+            <p class="site-description">CASİNOMHUB; 40.000 TL CASINO + 40.000 TL SPOR HOŞ GELDİN BONUSU - TIKLA VERELİM!</p>
+            <a href="https://chub.nakjdjsd.com/tr?partner=p120576p120884p91ca#registration" class="premium-btn">HEMEN KATIL</a>
         </div>
 
         <!-- Site Box 8 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_8" alt="Site 8" class="site-image">
-            <h3 class="site-title">Site 8</h3>
-            <p class="site-description">Özel turnuvalar ve yüksek ödüller.</p>
-            <a href="YOUR_SITE_LINK_8" class="premium-btn">TIKLA</a>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/Bj7UN2xPAp.png" alt="Site 8" class="site-image">
+            <p class="site-description">Ligobet'ten Black Friday'e Özel Dev Deneme Bonusu! 750₺ Deneme Bonusu ile ilk adımı kazançla at! Risk yok, sadece eğlence ve kazanç</p>
+            <a href="https://cutt.ly/BenIzqRi" class="premium-btn">HEMEN KATIL</a>
         </div>
 
         <!-- Site Box 9 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_9" alt="Site 9" class="site-image">
-            <h3 class="site-title">Site 9</h3>
-            <p class="site-description">Her gün yeni bonus fırsatları.</p>
-            <a href="YOUR_SITE_LINK_9" class="premium-btn">TIKLA</a>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/PhW5sZkEJbd.png" alt="Site 9" class="site-image">
+            <p class="site-description">İLK YATIRIMA ÖZEL %300 BONUS ZLOT'TA ! TARAFINI SEÇ VE KAZAN! 777₺ NAKİT Mİ, YOKSA 777₺ DEĞERİNDE FREESPİN Mİ</p>
+            <a href="https://cutt.ly/ReFEfhnI" class="premium-btn">HEMEN KATIL</a>
         </div>
 
         <!-- Site Box 10 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_10" alt="Site 10" class="site-image">
-            <h3 class="site-title">Site 10</h3>
-            <p class="site-description">En güvenilir bahis deneyimi.</p>
-            <a href="YOUR_SITE_LINK_10" class="premium-btn">TIKLA</a>
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/hgdkefoacGl9.png" alt="Site 10" class="site-image">
+            <p class="site-description">Yatırımsız 250₺ Deneme Bonusu Anında Hesabında! İster Casino Alanında, İster Spor Alanında Bahsini Yap Ve Yatırım Yapmadan Çekim Yap!</p>
+            <a href="https://cutt.ly/reis2658dama" class="premium-btn">HEMEN KATIL</a>
         </div>
 
-        <!-- Site Box 11 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_11" alt="Site 11" class="site-image">
-            <h3 class="site-title">Site 11</h3>
-            <p class="site-description">Kayıp bonusları ve özel kampanyalar.</p>
-            <a href="YOUR_SITE_LINK_11" class="premium-btn">TIKLA</a>
+        <!-- Site Box 11 (New) -->
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/HUtJ5CnOX.png" alt="Site 11" class="site-image">
+            <p class="site-description">🎯 🤑Yeni Üyeliklere Özel 100 Freespin Deneme Bonusu⤵️
+🤜Çevrimsiz!
+
+🍭Sweet Bonanza’da geçerlidir.
+⚡️Min-Maks. 250₺ Çekim</p>
+            <a href="https://mbmt.info/MhMn16" class="premium-btn">HEMEN KATIL</a>
         </div>
 
-        <!-- Site Box 12 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_12" alt="Site 12" class="site-image">
-            <h3 class="site-title">Site 12</h3>
-            <p class="site-description">VIP üyelere özel avantajlar.</p>
-            <a href="YOUR_SITE_LINK_12" class="premium-btn">TIKLA</a>
+        <!-- Site Box 12 (New) -->
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/iTFM_ozJ.png" alt="Site 12" class="site-image">
+            <p class="site-description">🌟 HOLEYY | 200 TL DENEME BONUSU | %200 FREESPIN |10.000TL İLK YATIRIM BONUSU | %100 1000 TL HAPPY DAYS BONUSU | %30 KAYIP BONUSU | LİMİTSİZ ÇEKİM!</p>
+            <a href="https://cutt.ly/ceKaJdAx" class="premium-btn">HEMEN KATIL</a>
         </div>
 
-        <!-- Site Box 13 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_13" alt="Site 13" class="site-image">
-            <h3 class="site-title">Site 13</h3>
-            <p class="site-description">Anlık bonuslar ve süper oranlar.</p>
-            <a href="YOUR_SITE_LINK_13" class="premium-btn">TIKLA</a>
+        <!-- Site Box 13 (New) -->
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/YHq6fkz.png" alt="Site 13" class="site-image">
+            <p class="site-description">💎 250 TL Freebet ya da 250 Freespin + %100 7.500₺'ye kadar SLOT İLK YATIRIM BONUSU +LİMİTSİZ KAZANÇ SINIRSIZ ÇEKİM İMKANI!</p>
+            <a href="https://cutt.ly/oeHUF4jW" class="premium-btn">HEMEN KATIL</a>
         </div>
 
-        <!-- Site Box 14 -->
-        <div class="site-box">
-            <img src="YOUR_IMAGE_LINK_14" alt="Site 14" class="site-image">
-            <h3 class="site-title">Site 14</h3>
-            <p class="site-description">Premium hizmet ve özel bonuslar.</p>
-            <a href="YOUR_SITE_LINK_14" class="premium-btn">TIKLA</a>
+        <!-- Site Box 14 (New) -->
+        <div class="site-box animate__animated animate__fadeInUp">
+            <img src="https://r.resimlink.com/HhJl7.png" alt="Site 14" class="site-image">
+            <p class="site-description">🏆 2025 TL DENEME BONUSU
+VAYCASİNO'DA!
+
+🔗Hala Üye Değilsen Hemen Giriş Yap!👇</p>
+            <a href="https://t2m.io/2220683" class="premium-btn">HEMEN KATIL</a>
         </div>
     </div>
 
     <script>
-        // Kar Efekti
+    </div>
+
+    <footer class="footer">
+        <p>REİS</p>
+    </footer>
+
+    <script>
         function createSnowflakes() {
-            const snowContainer = document.getElementById('snow-container');
-            const numberOfSnowflakes = 50;
+            const container = document.getElementById('snow-container');
+            const maxSnowflakes = 30; // Kar tanesi sayısını artırdım
             
-            for (let i = 0; i < numberOfSnowflakes; i++) {
-                createSnowflake(snowContainer);
+            for (let i = 0; i < maxSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '❄';
+                
+                const startX = Math.random() * window.innerWidth;
+                const duration = Math.random() * 3 + 4;
+                const delay = Math.random() * 5; // Farklı zamanlarda düşme efekti için
+                
+                Object.assign(snowflake.style, {
+                    left: startX + 'px',
+                    animation: `snowfall ${duration}s linear ${delay}s infinite`,
+                    fontSize: Math.random() * 12 + 10 + 'px', // Kar tanelerinin boyutunu biraz büyüttüm
+                    opacity: Math.random() * 0.6 + 0.2 // Opaklığı biraz artırdım
+                });
+                
+                container.appendChild(snowflake);
             }
         }
 
-        function createSnowflake(container) {
-            const snowflake = document.createElement('div');
-            snowflake.className = 'snowflake';
-            snowflake.innerHTML = '❄';
-            
-            const startPositionX = Math.random() * window.innerWidth;
-            const fallDuration = Math.random() * 5 + 5;
-            const fallDelay = Math.random() * 5;
-            
-            snowflake.style.left = startPositionX + 'px';
-            snowflake.style.animationDuration = fallDuration + 's';
-            snowflake.style.animationDelay = fallDelay + 's';
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
-            
-            container.appendChild(snowflake);
-            
-            snowflake.addEventListener('animationend', () => {
-                snowflake.remove();
-                createSnowflake(container);
-            });
-        }
+        document.addEventListener('DOMContentLoaded', createSnowflakes);
 
-        // Sayfa Yüklendiğinde Başlat
-        document.addEventListener('DOMContentLoaded', () => {
-            createSnowflakes();
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const container = document.getElementById('snow-container');
+                container.innerHTML = '';
+                createSnowflakes();
+            }, 300);
+        });
+
+        // Site kutularına animasyon gecikmesi ekle
+        document.querySelectorAll('.site-box').forEach((box, index) => {
+            box.style.animationDelay = `${index * 0.1}s`;
         });
     </script>
 </body>
